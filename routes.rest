@@ -1,0 +1,120 @@
+// Exercises: 
+GET http://localhost:3000/api/exercises
+
+###
+GET http://localhost:3000/api/exercises/Leg Press
+
+###
+POST http://localhost:3000/api/exercises
+Content-Type: application/json
+
+    {
+    "name": "Legs Press",
+    "category": "Legs",
+    "targetedMuscle": "hamstring",
+    "description": "This is a leg exercise" 
+    }
+
+###
+DELETE http://localhost:3000/api/exercises/61eea3c723dab644179a612d
+
+###
+PATCH http://localhost:3000/api/exercises/61efe62e3640d9c758885d72
+Content-Type: application/json
+
+    {
+    "name": "Leg Press",
+    "category": "Legs",
+    "targetedMuscle": "hamstring",
+    "description": "This is a leg exercise"    
+    }
+
+
+// Users:
+###
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+    {
+    "name": "John doe",
+    "username": "Andres",
+    "password": "password"
+    }
+
+###
+GET http://localhost:3000/api/users
+
+###
+DELETE http://localhost:3000/user/delete
+Content-Type: application/json
+
+    {
+    "password": "p"
+    }
+###
+POST   http://localhost:3000/user/login
+Content-Type: application/json
+
+{
+    "username": "JJdoe",
+    "password": "p"
+}
+
+// Workouts:
+###
+GET http://localhost:3000/api/workouts
+
+###
+POST http://localhost:3000/api/workouts
+Content-Type: application/json
+
+
+{
+    "workoutName": "Legs",
+    "startTime": "2017-01-01T00:00:00.000Z",
+    "endTime": "2017-01-01T00:00:00.000Z",
+    "notes": "This is a workout",
+    "isFinished": true,
+
+    "username": "JJdoe",
+    "exercises": [
+        {
+            "name": "Deadlift",
+            "workoutSets": [
+                {
+                    "repetitions": "10",
+                    "weight": "1000"
+                }
+            ]
+        },
+                {
+            "name": "Leg Press",
+            "workoutSets": [
+                {
+                    "repetitions": "10",
+                    "weight": "150"
+                }
+            ]
+        },
+                {
+            "name": "Leg Curl",
+            "workoutSets": [
+                {
+                    "repetitions": "10",
+                    "weight": "500"
+                }
+            ]
+        }
+    ]
+} 
+
+###
+GET http://localhost:3000/api/workouts/Johndoe1234
+
+###
+PATCH  http://localhost:3000/api/workouts/Johndoe1234/61efec1305706c456e4ded5e
+Content-Type: application/json
+
+{
+    "workoutName": "Legs"
+}

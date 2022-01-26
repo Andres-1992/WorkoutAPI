@@ -1,0 +1,4 @@
+{
+    "appService.deploySubpath": ".",
+    "appService.defaultWebAppToDeploy": "/subscriptions/9507f627-77fc-495c-b2de-d5ae6f5332fc/resourceGroups/workout/providers/Microsoft.Web/sites/WorkoutApplicationForAndres"
+}
