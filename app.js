@@ -6,10 +6,10 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const User = require('./models/user');
-const Url = require('./url')
+const Uri = require('./uri')
 
 //Connect to MongoDB
-mongoose.connect(Url.url, { useNewUrlParser: true });
+mongoose.connect(Uri.url, { useNewUrlParser: true });
 const db = mongoose.connection;
 db.on('error', (error) => console.log(error));
 db.once('open', () => console.log('Connected to MongoDB'));
